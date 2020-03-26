@@ -1,0 +1,15 @@
+
+
+  $browser-context: 16; // Default
+
+
+  $maincolor: #CCFFFF;
+  $maincolorf: rgb(0,102,153)	;
+
+  $bgFB:#FBF8F6;
+
+  
+  @function em($pixels, $context: $browser-context) {
+    @return #{$pixels/$context}em;
+  }
+

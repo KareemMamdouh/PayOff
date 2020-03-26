@@ -1,0 +1,485 @@
+@import './variables.scss';
+
+
+// style for app
+
+
+.App{
+  max-width:450px ;
+  margin: 0 auto;
+  
+}
+
+
+.btnw{
+  width: 250px;
+}
+
+
+.hvh33{
+  height: 33%;
+}
+
+
+// END
+
+
+
+@font-face {
+  src: url("./Tajawal-Light.ttf");
+  font-family: 'Tajawal';
+   font-weight: 300;
+
+}
+@font-face {
+  src: url("./Tajawal-Regular.ttf");
+  font-family: 'Tajawal';
+
+  
+}
+@font-face {
+  src: url("./Tajawal-Bold.ttf");
+  font-family: 'Tajawal';
+  font-weight: 600;
+
+}
+// @font-face {
+//   font-family: 'alqabas';
+//   src: url(alqabas2.ttf);
+//   padding-bottom: 2px;
+//   font-weight: 500;
+// }
+.App{
+  overflow-x:hidden!important;
+}
+*{
+  direction: rtl;
+  font-family: 'Tajawal'!important;
+}
+body{
+  text-align: right;
+
+}
+.fz8{
+  font-size: em(8);
+}
+.fz10{
+  font-size: em(10);
+}
+.fz12{
+  font-size: em(12);
+}
+.fz14{
+  font-size: em(14);
+}
+.fz16{
+  font-size: em(16);
+}
+.fz18{
+  font-size: em(18);
+}
+.fz20{
+  font-size: em(20);
+}
+.fz22{
+  font-size: em(22);
+}
+.fz24{
+  font-size: em(24);
+}
+.fz28{
+  font-size: em(28);
+}
+.fz30{
+  font-size: em(30);
+}
+.fz34{
+  font-size: em(34);
+}
+.fz49{
+  font-size: em(49);
+}
+.fz37{
+  font-size: em(37);
+}
+.fz65{
+  font-size: em(65);
+ line-height: 65px;
+}
+//colors
+.fcbrouwn{
+  color: #2A1200
+}
+.bgcbrouwn{
+  background-color: #170801
+}
+.fzcblack{
+  color: #393939
+}
+.fcblack:hover{
+  color: #393939
+}
+
+.fcb{
+  color: #000
+}
+.fzcb:hover{
+  color: #000
+}
+.bgcblack{
+  background-color: #393939
+}
+.bcmuted{
+  border-color: #717171!important;
+}
+.fzcmuted{
+  color: #717171
+}
+.fcmuted:hover{
+  color: #717171
+}
+.fcwhite{
+  color: #FFF
+}
+.fcwhite:hover{
+  color: #FFF
+}
+.fcbs{
+  color: #dee2e6;
+}
+.fcm{
+  color: $maincolorf!important
+}
+.fcm:hover{
+  color: $maincolorf
+}
+.fcm2{
+  color: $maincolor!important
+}
+.fcm2:hover{
+  color: $maincolor
+}
+.bgcwhite{
+  background-color: #FFF
+}
+.bgcmuted{
+  background-color: #717171
+}
+
+
+.bgcm{
+  background-color: $maincolor
+}
+.bgcm2{
+  background-color: $maincolorf
+}
+.require{
+  color: red;
+  padding:  0 1px;
+  font-size: 12px!important;
+}
+.bgct{
+  background-color: #07B5EC;
+}
+.bgcf{
+  background-color: #005DB9;
+}
+.border-balck{
+  border:1px solid #393939!important
+}
+.bordercm{
+  border:1px solid $maincolor!important
+}
+.bordercm2{
+  border:2px solid $maincolor!important
+}
+
+.Cface{
+  
+  filter: invert(36%) sepia(13%) saturate(2287%) hue-rotate(183deg) brightness(89%) contrast(93%)
+  }
+  .Cwhitw{
+  
+    filter: invert(99%) sepia(5%) saturate(3%) hue-rotate(29deg) brightness(105%) contrast(100%);
+  }
+  .Cmuted{
+    filter: invert(42%) sepia(0%) saturate(24%) hue-rotate(231deg) brightness(104%) contrast(97%)
+  }
+  .CM{ filter: invert(18%) sepia(50%) saturate(5690%) hue-rotate(185deg) brightness(97%) contrast(105%);}
+//font weight
+.fw300{
+  font-weight: 300!important;
+
+}
+.fw400{
+  font-weight: 400!important;
+
+}
+
+.fw500{
+  font-weight: 500!important;
+
+}
+.fw600{
+  font-weight: 600!important;
+
+}
+
+// a tag
+a{
+  color: inherit;
+}
+a:hover{
+  color: inherit;
+}
+.stylelink{
+text-decoration: none;
+}
+.stylelink:hover{
+  text-decoration: none;
+  color:none
+  }
+
+
+.b_r{
+  border-radius: 10px;
+}
+.underline{
+  text-decoration: underline!important;
+}
+.pointer{
+  cursor: pointer
+}
+//lines
+.borderdashed{
+  border: 0.5px solid #dee2e6;
+  border-style: dashed;
+  }
+hr{
+  border:  1px solid #00000029;
+  width: 95%;
+}
+.hrv {
+  height: 100%;
+  border: 0.5px solid #E1E1E1;
+  padding: 0px;
+  margin: 1px;
+  display: inline
+}
+.hrv2 {
+  height: 150px;
+  border: 0.5px solid #E1E1E1;
+  padding: 0px;
+  margin: 1.5px;
+  display: inline
+}
+
+// height
+.fh40{
+  height: 40px;
+  overflow: hidden;
+}
+.fh35{
+  height: 35px;
+  overflow: hidden;
+}
+.fh56{
+  height: 56px;
+  overflow: hidden;
+}
+.fh63{
+  height: 63px;
+  overflow: hidden;
+}
+.mh65{
+  min-height: 65px;
+}
+
+.lineh9{
+  line-height: 9px;
+}
+// inputs 
+.form-control:focus{
+  border-color:$maincolor!important
+}
+input,select,.reduc5{
+  border-radius: 5px!important;
+}
+
+.relative{
+  position: relative;
+}
+
+// grid 
+.center-v{
+  display: flow-root;
+  align-self: center;
+  }
+@media (max-width: 575.98px) {  
+.col-1-5{
+  width: 100%;
+  float: left;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+} }
+
+@media (min-width: 576px) {  
+  .col-1-5{
+  width: 50%;
+  float: left;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {  
+  .col-1-5{
+  width: 33.333%;
+  float: left;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+} }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { 
+  .col-1-5{
+    width: 25%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+ }
+ @media(min-width: 1200px){
+  .col-1-5{
+    width: 20%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+// custom  scroll
+   .App ::-moz-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  .App ::-webkit-scrollbar {
+    width: 6px;
+    height: 10px;
+  }
+  /* Track */
+  .App ::-webkit-scrollbar-track {
+    margin:  10px;
+
+    box-shadow: inset 0 0 5px #E1E1E1; 
+    border-radius: 10px;
+  }
+  /* Handle */
+  .App ::-webkit-scrollbar-thumb {
+    background: #E1E1E1; 
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  .App ::-webkit-scrollbar-thumb:hover {
+    background: #999; 
+  }
+
+// form edit
+  select{
+    background-color: #FBF8F6;
+    padding: 5px;
+    width: 150px;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  background-image: url('./Images/arrowselect.svg');
+  background-repeat: no-repeat;
+  background-position: 5% ;
+  background-size: 23px;
+  border: 2px solid #B9B9B9;
+}
+::placeholder {
+  color: #aaa!important;
+  font-size: 16px!important;
+
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #B9B9B9;
+  font-weight: 500;
+  
+}
+::-webkit-input-placeholder { /* Edge */
+  color: #aaa!important;
+  font-size: 12px;
+}
+
+::-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #aaa!important;
+  font-size: 12px;
+}
+// custom chack box
+input[type=checkbox] {
+width: 20px;
+height: 20px;
+margin: 2px -30px;
+padding: 2px 0 0 0;
+}
+input[type=checkbox].rela 
+{  top: 5px;
+position: relative;}
+
+// animationt
+.animationtext {
+  opacity: 1;
+  -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
+  animation-name: example;
+  animation-duration: 3s;
+}
+.LoadingPOPUP{
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+  height: 100%;
+  background-color: rgba($color: #000000, $alpha: 0.3);
+}
+@-webkit-keyframes example {
+  0%   {opacity: 0;}
+  25%  {opacity: 0;}
+  75%  {opacity: 0;}
+  100% {opacity: 1;}
+}
+@keyframes example {
+  0%   {opacity: 0;}
+  25%  {opacity: 0;}
+  75%  {opacity: 0;}
+  100% {opacity: 1;}
+}
+@media (max-width: 576px) { 
+  .btnw{
+    width: 140px;
+  }
+}
+// Global media Q
+@media (max-width:768px) { 
+  .mq-sm-center{
+    text-align: center;
+  }
+  .mq-sm-mxauto{
+   margin: 0 auto;
+  }
+  .mq-w75{
+    width: 75%;
+  }
+}

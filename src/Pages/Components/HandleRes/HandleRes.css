@@ -1,0 +1,19 @@
+.handlebackend{
+    width: 23%;
+    min-width: 205px;
+    position: fixed;
+    top: 75px;
+    right: 2%;
+    z-index: 100000;
+}
+.handlebackend button{
+    min-width: 50px!important;
+    
+}
+@media (max-width: 575.98px) {.handlebackend{
+    width: 80%;
+    min-width: 205px;
+    position: fixed;
+    top: 75px;
+    right: 2%;
+} }

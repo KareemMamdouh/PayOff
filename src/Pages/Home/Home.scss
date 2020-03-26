@@ -1,0 +1,45 @@
+@import '../../variables.scss';
+
+
+.Home{
+    background-color: $maincolor;
+    min-height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    min-height: calc(var(--vh, 1vh) * 100);
+    overflow: hidden;
+    .Pound{
+      position: absolute;
+      
+      top: 22%;
+      left: 7%;
+  
+    }
+    .PoundInputhr{
+      position: absolute;
+      top: 42%;
+      width: 90%;
+      right: 4%;
+      border-color: $maincolor;
+    }
+    .icon20{
+      width: 20px!important;
+      height: 30px!important;
+
+      object-fit: contain;
+    }
+    .savingMony{
+        width: 170px;
+        height: 170px;
+        object-fit: cover;
+    }
+    .user-field {
+        height: 50px;
+        // border: 2px solid #006699;
+        border-radius: 0 7px 0 7px!important;
+        background-color: #FFFFFF;
+        box-shadow: none;
+        padding:0 15px 0 50px;
+      }
+      .form-control:focus {
+        border-color: #006699!important;
+      }
+}
