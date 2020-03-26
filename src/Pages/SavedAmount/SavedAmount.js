@@ -40,7 +40,7 @@ class SavedAmount extends React.Component {
               توفر حتى
             </p>
             <div>
-              <p className="result   m-0 mt-2" style={{ textShadow: "0 2px 4px 0" }}>{" "}
+              <p className="result   m-0 mt-3" style={{ textShadow: "0 2px 4px 0" }}>{" "}
                 {this.props.calcRedult ? this.props.calcRedult : '0'}
               </p>{" "}
               <p className="fz22 fcm fw600 m-0 poundtoresult">{" "}
