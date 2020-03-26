@@ -58,14 +58,11 @@ class Home extends React.Component {
       <div className="Home ">
         <div className="d-flex flex-column align-items-center col-12 x-auto">
           <div className="contenthvh33 p-2 pt-4 ">
-            <p className="fz28 fcm d-block m-0">إنضم لعملائنا اللي تقريباً
+            <p className="fz34 fcm d-block m-0">إنضم لعملائنا الأن!
           </p>
-            <p className="fz28 d-block fw600 fcm m-0">
-              كل واحد
-            <span className=" fw500 ">{" "}
-              فيهم
-            </span>{" "}
-             وفر
+            <p className="fz22 d-block fw600 fcm m-0">
+              متوسط توفير الواحد فيهم
+
           </p>
             <div>
 
