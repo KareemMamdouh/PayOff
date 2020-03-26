@@ -24,11 +24,11 @@ class Home extends React.Component {
     if (isNaN(this.state.amount)) {
       erroramount = "أدخل القيمه بالجنيه ";
     }
-    if (this.state.amount <= 0) {
-      erroramount = "اقل قيمه هي 1 جنيه";
+    if (this.state.amount < 5000) {
+      erroramount = "اقل قيمه هي 5000 جنيه";
     }
-    if (this.state.amount <= 0) {
-      erroramount = "اقل قيمه هي 1 جنيه";
+    if (this.state.amount > 40000) {
+      erroramount = "اكبر قيمه هي 40000 جنيه";
     }
     if (erroramount) {
       this.setState({
@@ -84,7 +84,7 @@ class Home extends React.Component {
             <div className="  col-12 mx-auto">
 
               <p className="fz16 fcm  m-0 mb-1">
-                شوف إنت كمان مكن توفر قد إيه!
+                شوف إنت كمان ممكن توفر قد إيه!
             </p>
               <div class="hvh33 px-2  mx-auto ">
 

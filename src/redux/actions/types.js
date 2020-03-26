@@ -1,5 +1,5 @@
 // export const LINKAPIS = "http://172.16.1.146:4000";
-export const LINKAPIS = "http://172.16.1.146/PayOff_V2/";
+export const LINKAPIS = "https://mommyzone.me/PayOff_BE/";
 // export const LINKIMAGES = "https://www.inf.tatelecom.com:4000/images/";
 // export const LINKAPISReDirections = "https://www.inf.tatelecom.com:4000";
 

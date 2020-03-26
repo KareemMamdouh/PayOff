@@ -41,7 +41,7 @@ class SavedAmount extends React.Component {
             </p>
             <div>
               <p className="result   m-0" style={{ textShadow: "0 2px 4px 0" }}>{" "}
-                {this.props.calcRedult ? this.props.calcRedult : '٢٩٦'}
+                {this.props.calcRedult ? this.props.calcRedult : '0'}
               </p>{" "}
               <p className="fz22 fcm fw600 m-0 poundtoresult">{" "}
               جنيه
@@ -55,7 +55,7 @@ class SavedAmount extends React.Component {
                 <p className="m-0 fcm2 fz20 fw600 m-0 mt-1">سجل حسابك</p>
               </div>
               <p className="fz16 fcm  m-0 mb-1">
-                مش هتاخد منك غير كام دقيقة
+                مش هناخد منك غير كام دقيقة
             </p>
             </div>
           </div>
