@@ -168,7 +168,7 @@ class Personal extends React.Component {
                           <div class="modal-body pt-5">
                               <p class="fz28 linetext fcm m-0">تفاصيل الكرديت كارد:</p>
                               <div className="col-12 mx-auto pt-3">
-                                    <select className="user-field form-control text-muted fz14   "name="BankName"  onChange={(e)=>this.GetBankCreditCards(e,i)} value={this.props.BankName}> 
+                                    <select className="user-field form-control text-muted fz14   "name="BankName"  onChange={(e)=>this.GetBankCreditCards(e,i)} value={this.state.Alldata[i]&&this.state.Alldata[i].BankName}> 
                                       <option>اسم البنك</option>
                                       {this.props.AllBanks&&this.props.AllBanks.map((x,i)=>{
                                        return <option value={i}  key={i}>{x.Name}</option>
