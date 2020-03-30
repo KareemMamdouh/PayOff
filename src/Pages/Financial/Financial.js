@@ -63,7 +63,7 @@ class Personal extends React.Component {
     this.setState({
       Alldata
     })
-      this.props.GetBankCreditCards( this.props.AllBanks[i].ID)
+      this.props.GetBankCreditCards( this.props.AllBanks[e.target.value].ID)
   }
   handleSubmit=()=>{
     localStorage.removeItem("Data")
