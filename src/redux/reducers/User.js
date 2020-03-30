@@ -1,5 +1,6 @@
 import {
-  POST_CALC
+  POST_CALC,
+  POST_GENERAL_CALC
 } from "../actions/types";
 // import cookies from "js-cookie";
 
@@ -23,6 +24,11 @@ export default (state = initialState, action) => {
         ...state,
         calcRedult: action.payload
       };
+    case POST_GENERAL_CALC:
+    return {
+      ...state,
+      GeneralResult: action.payload
+    };
     // case USER_REGISTER_SUCCESS:
     //   return {
     //     ...state,

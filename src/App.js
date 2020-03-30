@@ -9,8 +9,11 @@ import { history } from "./redux/_helpers/history";
 import HandleRes from "./Pages/Components/HandleRes/HandleRes";
 import Home from "./Pages/Home/Home";
 import SavedAmount from "./Pages/SavedAmount/SavedAmount";
-
-
+import Personal from "./Pages/Personal/Personal";
+import Financial from "./Pages/Financial/Financial";
+import Work from "./Pages/Work/Work";
+import AcoountReady from "./Pages/AcoountReady/AcoountReady";
+import Calculate from "./Pages/Calculate/Calculate";
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -32,7 +35,11 @@ class App extends React.Component {
             <Switch>
               <Route exact path="/" component={Home}></Route>
               <Route exact path="/SavedAmount" component={SavedAmount}></Route>
-
+              <Route exact path="/PersonalInformation" component={Personal}></Route>
+              <Route exact path="/FinancialInformation" component={Financial}></Route>
+              <Route exact path="/Work" component={Work}></Route>
+              <Route exact path="/AcoountReady" component={AcoountReady}></Route>
+              <Route exact path="/Calculate" component={Calculate}></Route>
             </Switch>
           </div>
           {(this.props.successMessageAR ? <HandleRes title={this.props.successMessageAR} stylecss="alert-success" /> : '')}

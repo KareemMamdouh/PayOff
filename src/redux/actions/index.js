@@ -7,8 +7,12 @@ import {
   HANDLE_ERROR_GLOBAL,
   USERS_LOGOUT,
   RESET_ERRORS,
-  ERROR_MESSAGE_BACK_END
-
+  ERROR_MESSAGE_BACK_END,
+  GET_ALL_BANK,
+  GET_BANK_CREDIT_CARDS,
+  GET_DURATION_BY_AMOUNT,
+  POST_GENERAL_CALC
+  
 } from "./types";
 import { history } from "../_helpers/history";
 import { authHeader, authHeaderAPI } from "../_helpers/auth-header";
@@ -31,8 +35,63 @@ export const Calculate = (amount) => {
       });
   };
 };
+export const GeneralCalculate = (amount,duration,interest) => {
+  return dispatch => {
+    axios
+      .post(`${LINKAPIS}/api/Bank/Calculate?amount=${amount}&duration=${duration}&interest=${interest}`)
+      .then(res => {
+        console.log(res)
+        dispatch({ type: POST_GENERAL_CALC, payload: res.data.Data })
+      }
+      )
+      .catch(error => {
+        dispatch(HandleCachError(error));
+      });
+  };
+};
+export const GetAllBanks = () => {
+  return dispatch => {
+    axios
+      .get(`${LINKAPIS}/api/Bank/GetAll`)
+      .then(res => {
+        console.log(res)
+        dispatch({ type: GET_ALL_BANK, payload: res.data.Data })
+      }
+      )
+      .catch(error => {
+        dispatch(HandleCachError(error));
+      });
+  };
+};
+export const GetBankCreditCards = (ID) => {
+  return dispatch => {
+    axios
+    .get(`${LINKAPIS}/api/Bank/GetBankCreditCards?bankId=${ID}`)
+    .then(res => {
+        console.log(res)
+        dispatch({ type: GET_BANK_CREDIT_CARDS, payload: res.data.Data })
+      }
+      )
+      .catch(error => {
+        dispatch(HandleCachError(error));
+      });
+  };
+};
 
-
+export const GetDurationByAmmout = (amount) => {
+  return dispatch => {
+    axios
+    .get(`${LINKAPIS}/api/Bank/GetDurationByAmmout?amount=${amount}`)
+    .then(res => {
+        console.log(res)
+        dispatch({ type: GET_DURATION_BY_AMOUNT, payload: res.data.Data })
+      }
+      )
+      .catch(error => {
+        dispatch(HandleCachError(error));
+      });
+  };
+};
 
 
 function HandleCachError(error) {

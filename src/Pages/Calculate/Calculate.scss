@@ -1,0 +1,159 @@
+@import '../../variables.scss';
+
+
+.Calculate {
+    background-color: $maincolor;
+    min-height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    min-height: calc(var(--vh, 1vh) * 100);
+    overflow: hidden;
+    select:optional[id=style] select{
+      color: #000!important;
+
+    }
+    .nav{
+      height: 60px;
+      background-color:  $maincolorf;
+      box-shadow: 0 3px 6px 0 rgba(0,0,0,0.3);
+      .bar{
+        height: 33px;
+        border: 2px solid #FFFFFF;
+        border-radius: 25px;
+      }
+      .barwhite{
+        border: 1px solid #FFFFFF;
+        border-radius: 25px;
+
+      }
+      .barPersonal{
+        height: 22px;
+        border-radius: 25px;
+        background-color:  #66FFCC;
+        color:  $maincolorf;
+      }
+    }
+    .ActiveBorder{
+      border: 2px solid $maincolorf!important;
+    }
+    .resultsec{
+      border: 2px solid $maincolorf;
+
+    }
+    .resultsec2{
+      border-top: 2px solid $maincolorf;
+      background-color: #66FFCC;
+    }
+    .Pound{
+      position: absolute;
+      top: 28%;
+      left: 7%;
+    }
+    .borderimg{
+      overflow: hidden;
+      width: 90px;
+      height: 65px!important;
+      object-fit:cover ;
+      border: 1px dashed #B5B5B5;
+      border-radius: 0 8px 0 8px;
+    }
+    .imagestyle{
+      width: 100%;
+      height: 100%;
+      object-fit:cover ;
+    }
+    .mmt15{
+      margin-top: -15px;
+    }
+    .user-field {
+      height: 50px;
+      border: 1px solid #ced4da!important;
+      // border-radius: 0 7px 0 7px!important;
+      background-color: #FFFFFF;
+      box-shadow: none;
+      padding:0 15px 0 50px;
+      // box-shadow: inset 0 1px 1px 0 #006699
+
+    }
+    .line-copy-2 {
+      box-sizing: border-box;
+      height: 1px;
+      width: 727px;
+      border: 1px solid rgba(0,102,153,0.05);
+      transform: rotate(-359.98deg);
+    }
+    .InputCounter{
+      box-shadow: inset 0 2px 6px 0 rgba(0,0,0,0.5);
+      border: 1px solid $maincolorf!important;
+      background-color: $maincolorf;
+      color:#66FFCC;
+      height: 70px;
+      width: 95px;
+      text-align: center;
+      align-items: center;
+      font-size: 32px;
+      // line-height: 30px;
+      padding: 12px;
+    }
+    .borderimg{
+      border-radius: 0 7px 0 7px!important;
+      overflow: hidden;
+      height: 93px;
+      object-fit:contain ;
+    }
+    .inputNumber{
+      box-shadow: none;
+      width: 30px;
+      padding:0 5px ;
+      border-radius: 0 !important;
+      background-color: $maincolor;
+      border: none!important;
+      border-bottom: 2px solid $maincolorf!important;
+      font-size: 24px;
+      line-height: 48px;
+    }
+    .inputNumber::placeholder{
+      line-height: 48px;
+      font-size: 22px!important;
+    }
+    .inputNumber:focus{
+      border: none!important;
+
+    }
+    .user-field:focus {
+      border: 1px solid #ced4da!important;
+      // border-radius: 0 7px 0 7px!important;
+      background-color: #FFFFFF;
+      box-shadow: none;
+      padding:0 15px 0 50px;
+      // box-shadow: inset 0 1px 3px 0 #006699
+
+    }
+    .borderimg{
+
+    }
+
+    // .result{
+    //   font-size: 120px!important;
+    //   color: #66FFCC;
+    //   font-weight: bold;
+    //   letter-spacing: 0;
+    //   line-height: 78px;
+    //   text-align: right;
+    //   text-shadow:0  2px 4px  #006699,
+    //      }
+    
+    // .savingMony{
+    //     width: 170px;
+    //     height: 170px;
+    //     object-fit: cover;
+    // }
+    // .poundtoresult{
+    //   text-align: right;
+    //   margin-top: -18px!important;
+    // }
+    // .lh26{
+    //   line-height: 26px;
+    // }
+    // .icon10{
+    //   width: 10px;
+    // }
+}

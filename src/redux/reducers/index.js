@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
-import Campaigns from './Campaigns';
+import Bank from './Bank';
 import User from './User';
 import Errors from './Errors';
 
 export default combineReducers({
-    Campaigns: Campaigns,
+    Bank: Bank,
     User: User,
     Errors: Errors,
 

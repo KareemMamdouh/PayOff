@@ -7,6 +7,7 @@
 .App{
   max-width:450px ;
   margin: 0 auto;
+  overflow: hidden;
   
 }
 
@@ -25,12 +26,12 @@
 
 
 
-@font-face {
-  src: url("./Tajawal-Light.ttf");
-  font-family: 'Tajawal';
-   font-weight: 300;
+// @font-face {
+//   src: url("./Tajawal-Light.ttf");
+//   font-family: 'Tajawal';
+//    font-weight: 300;
 
-}
+// }
 @font-face {
   src: url("./Tajawal-Regular.ttf");
   font-family: 'Tajawal';
@@ -224,7 +225,27 @@ body{
   font-weight: 600!important;
 
 }
-
+// width
+.icon10{
+  width: 10px;
+  height: 10px;
+  object-fit: contain;
+}
+.icon15{
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
+}
+.icon20{
+  width: 20px;
+  height: 20px;
+  object-fit: contain; 
+}
+.icon25{
+  width: 25px;
+  height: 25px;
+  object-fit: contain; 
+}
 // a tag
 a{
   color: inherit;
@@ -273,14 +294,13 @@ hr{
   margin: 1.5px;
   display: inline
 }
-
 // height
 .fh40{
-  height: 40px;
+  height: 40px!important;
   overflow: hidden;
 }
 .fh35{
-  height: 35px;
+  height: 35px!important;
   overflow: hidden;
 }
 .fh56{
@@ -294,7 +314,6 @@ hr{
 .mh65{
   min-height: 65px;
 }
-
 .lineh9{
   line-height: 9px;
 }
@@ -305,7 +324,10 @@ hr{
 input,select,.reduc5{
   border-radius: 5px!important;
 }
-
+select:disabled {
+    color: -internal-light-dark-color(graytext, rgb(170, 170, 170));
+    background-color:  rgba(170, 170, 170,0.8)!important;
+}
 .relative{
   position: relative;
 }
@@ -403,12 +425,19 @@ input,select,.reduc5{
     text-align: center;
     -webkit-appearance: none;
     -moz-appearance: none;
-  background-image: url('./Images/arrowselect.svg');
-  background-repeat: no-repeat;
-  background-position: 5% ;
-  background-size: 23px;
-  border: 2px solid #B9B9B9;
+    background-image: url('./Images/arrowselect.png');
+    background-repeat: no-repeat;
+    background-position: 8% ;
+    background-size: 15px;
+    border: 2px solid #B9B9B9;
 }
+
+
+// select.Active{
+
+// background-image: url('./Images/arrowselect.svg');
+
+// }
 ::placeholder {
   color: #aaa!important;
   font-size: 16px!important;
@@ -483,3 +512,4 @@ position: relative;}
     width: 75%;
   }
 }
+

@@ -51,9 +51,9 @@ class SavedAmount extends React.Component {
 
           <div className=" p-2 text-center d-flex align-items-center col-12 mx-auto pt-2">
             <div className="  col-12 mx-auto">
-              <div className="btn p-2 bgcm2  my-2  w-100  d-flex justify-content-center">
+              <Link to="/PersonalInformation" className="btn p-2 bgcm2  my-2  w-100  d-flex justify-content-center">
                 <p className="m-0 fcm2 fz20 fw600 m-0 mt-1">فعّل حسابك</p>
-              </div>
+              </Link>
               <p className="fz16 fcm  m-0 mb-1">
                 مش هناخد منك غير كام دقيقة
             </p>
