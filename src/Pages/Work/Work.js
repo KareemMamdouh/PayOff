@@ -21,7 +21,9 @@ class Work extends React.Component {
     super(props);
     this.state = {
       status:0,
-      children:0
+      children:0,
+      typeEmployment:0,
+      details:0,
     };
     this.handleSaveImage=this.handleSaveImage.bind(this)
   }
@@ -72,9 +74,9 @@ class Work extends React.Component {
                    <div className="col-2 p-0"><img src={help} alt="" className="icon20   " /></div>
                 </div>
                 <div className="col-12 mx-auto py-3">
-                      <select className="user-field form-control text-muted fz14   " > 
-                        <option>غير موظف / دراسة </option>
-                        <option>صاحب العمل / مدير نفسكs </option>
+                      <select  className={this.state.typeEmployment==0?"user-field form-control text-muted fz14   ":"user-field form-control text-muted fz20 fw600 fcm3 "}  name="typeEmployment" value={this.state.typeEmployment} onChange={this.handleChange}> 
+                        <option value="0">غير موظف / دراسة </option>
+                        <option>صاحب العمل / مدير نفسك </option>
                         <option>شركة عائلية </option>
                         <option>شركة محلية صغيرة / متوسطة</option>
                         <option>شركة محلية كبيرة</option>
@@ -98,22 +100,22 @@ class Work extends React.Component {
                 
               <div className="row col-12 m-0 ">
                 <div className="col-12 px-1 py-2">
-                  <input type="text" className=" form-control  user-field  fz22 fw600  fcm " placeholder="TA Telecom" />
+                  <input type="text" className=" form-control  user-field  fz22 fw600  fcm3 " placeholder="إسم شركتك" />
                </div>
                <div className="col-12 px-1 py-2">
-                  <input type="text" className=" form-control  user-field  fz22 fw600  fcm " placeholder="Entrepreneur In Residence" />
+                  <input type="text" className=" form-control  user-field  fz22 fw600  fcm3 " placeholder="المسمى الوظيفي" />
                </div>
               <div className="col-6 mx-auto py-3 pr-1">
-                  <input type="text" className=" form-control  user-field  fz22 fw600 fh40  fcm " placeholder="سنة التعيين" />
+                  <input type="number" className=" form-control  user-field  fz22 fw600 fh40  fcm3 " placeholder="سنة التعيين" />
  
                  </div>
                  <div className="col-6 mx-auto py-3 pl-1">
-                      <select className="user-field form-control text-muted fz14 fh40  " > 
-                        <option>المرتب الشهري</option>
+                      <select className={this.state.details==0?"user-field form-control text-muted fz14 fh40  ":"user-field form-control text-muted fz22 fw600 fh40  fcm3  "} name="details" value={this.state.details} onChange={this.handleChange}> 
+                        <option value="0">المرتب الشهري</option>
                         <option>أقل من ٥٠٠٠ جم</option>
                         <option>من ٥٠٠٠ حتى ٩٠٠٠ جم</option>
                         <option>من ٩,٠٠٠ حتى ١٢,٠٠٠ جم</option>
-                        <option>ن ١٢,٠٠٠ حتى ٢٠,٠٠٠ جم</option>
+                        <option>من ١٢,٠٠٠ حتى ٢٠,٠٠٠ جم</option>
                         <option>من ٢٠,٠٠٠ حتى ٣٠,٠٠٠ جم</option>
                         <option>من ٣٠,٠٠٠ حتى ٤٠,٠٠٠ جم</option>
                         <option>من ٤٠,٠٠٠ حتى ٦٠,٠٠٠ جم</option>

@@ -13,7 +13,7 @@ export default (state = initialState, action) => {
     case GET_BANK_CREDIT_CARDS:
       return {
         ...state,
-        BankCreditsCards: action.payload
+        BankCreditsCards: { ...state.BankCreditsCards, [action.i]: action.payload }
       };
     case GET_DURATION_BY_AMOUNT:
     return {

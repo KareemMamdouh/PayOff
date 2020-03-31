@@ -63,13 +63,13 @@ export const GetAllBanks = () => {
       });
   };
 };
-export const GetBankCreditCards = (ID) => {
+export const GetBankCreditCards = (ID,i) => {
   return dispatch => {
     axios
     .get(`${LINKAPIS}/api/Bank/GetBankCreditCards?bankId=${ID}`)
     .then(res => {
         console.log(res)
-        dispatch({ type: GET_BANK_CREDIT_CARDS, payload: res.data.Data })
+        dispatch({ type: GET_BANK_CREDIT_CARDS, payload: res.data.Data ,i})
       }
       )
       .catch(error => {

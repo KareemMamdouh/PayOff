@@ -86,7 +86,7 @@ class Home extends React.Component {
               <div class="hvh33 px-2  mx-auto ">
 
                 <div className="px-2 relative">
-                  <input type="text" className="user-field form-control fz22 fw600 fcm " onChange={this.handleChange} value={this.state.amount} placeholder="مديونية الكرديت كارد؟ " />
+                  <input type="number" className="user-field form-control fz22 fw600 fcm " onChange={this.handleChange} value={this.state.amount} placeholder="مديونية الكرديت كارد؟ " />
                   <span className="Pound fz16 text-muted">جنيه</span>
                   <hr className="PoundInputhr" />
                 </div>

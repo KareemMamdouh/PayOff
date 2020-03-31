@@ -14,6 +14,9 @@ import plus from "../../Images/plus.png";
 import happiness from "../../Images/happiness.png";
 import facebook from "../../Images/facebook.png";
 import google from "../../Images/google.png";
+import IDBack from "../../Images/IDBack.png";
+import IDFront from "../../Images/IDFront.png";
+import NextActive from "../../Images/NextActive.png";
 
 
 class Personal extends React.Component {
@@ -21,7 +24,13 @@ class Personal extends React.Component {
     super(props);
     this.state = {
       status:0,
-      children:0
+      children:0,
+      type:0,
+      Socialstatus:0,
+      Governorate:0,
+      areas:0,
+      children2:0,
+      institutions:0
     };
     this.handleSaveImage=this.handleSaveImage.bind(this)
   }
@@ -74,44 +83,41 @@ class Personal extends React.Component {
             </div>
             <div className="row m-0 px-3 py-3">
                   <div className="col-6 p-0 px-2 borderimg">
-                  <img src={this.state.img1?URL.createObjectURL(this.state.img1):AddCard} alt="" className=" h-100  w-100  borderimg" onClick={()=>document.getElementById("img1").click()} />
-                    <input type="file" name="img1" id="img1" onChange={this.handleSaveImage} style={{display:"none"}}/>
+                  <img src={this.state.Activeimg?IDFront:AddCard} alt="" className=" h-100  w-100  borderimg" onClick={()=>this.setState({Activeimg:true})} />
                   </div>
                   <div className="col-6 p-0 px-2 borderimg">
-                  <img src={this.state.img2?URL.createObjectURL(this.state.img2):AddCard2} alt="" className=" h-100  w-100  borderimg" onClick={()=>document.getElementById("img2").click()} />
-                    <input type="file" name="img2" id="img2" onChange={this.handleSaveImage} style={{display:"none"}}/>
+                  <img src={this.state.Activeimg?IDBack:AddCard2} alt="" className=" h-100  w-100  borderimg" onClick={()=>this.setState({Activeimg:true})} />
 
                   </div>
             </div>
           </div>
           <div className=" row m-0 px-3 pt-0 pb-3">
                 <div className="col-12 px-1 pb-2">
-                    <input type="text" className="user-field form-control fz22 fw600 fcm " placeholder="الإسم بالكامل" />
+                    <input type="text" className="user-field form-control fz22 fw600 fcm3 " placeholder="الإسم بالكامل" />
                 </div>
-                <div className="col-6 px-1 py-2">
-                  <select className="user-field form-control text-muted fz14 fh40  " > 
-                    <option>النوع</option>
-                    <option>ذكر</option>
-                    <option>أنثى</option>
-
+                <div className="col-6 px-1 py-2 pb-3">
+                  <select className={this.state.type==0?"user-field form-control text-muted fz14 fh40  ":"user-field form-control text-muted fz20 fcm3 fh40 fw600 "}name="type" value={this.state.type} onChange={this.handleChange}> 
+                    <option value="0" >النوع</option>
+                    <option >ذكر</option>
+                    <option >أنثى</option>
                   </select>                
                </div>
                <div className="col-6 px-1 py-2">
-                  <select className="user-field form-control text-muted fz14  fh40 " > 
-                    <option>الحالة الاجتماعية</option>
-                    <option>أعزب</option>
-                    <option>متزوج</option>
-                    <option>مطلق</option>
-                    <option>أرمل</option>
+                  <select className={this.state.Socialstatus==0?"user-field form-control text-muted fz14  fh40 ":"user-field form-control text-muted fh40 fw600 fcm3 fh40 "} name="Socialstatus" value={this.state.Socialstatus} onChange={this.handleChange} > 
+                    <option value="0"  className="fz14 text-muted  fw600">الحالة الاجتماعية</option>
+                    <option  className="fz20 fcm3  fw600">أعزب</option>
+                    <option  className="fz20 fcm3  fw600">متزوج</option>
+                    <option  className="fz20 fcm3  fw600">مطلق</option>
+                    <option  className="fz20 fcm3  fw600">أرمل</option>
 
                   </select>                
                </div>
                <div className="col-12 px-1 pb-2">
-                    <input type="text" className="user-field form-control fz22 fw600 fcm " placeholder="العنوان الأساسي" />
+                    <input type="text" className="user-field form-control fz22 fw600 fcm3 " placeholder="العنوان الأساسي" />
                 </div>
                 <div className="col-6 px-1 py-2">
-                  <select className=" form-control user-field text-muted fz14 fh40  " > 
-                    <option>المحافظة</option>
+                <select className={this.state.Governorate==0?"user-field form-control text-muted fz14  fh40 ":"user-field form-control text-muted fh40 fw600 fcm3 fh40 "} name="Governorate" value={this.state.Governorate} onChange={this.handleChange} > 
+                    <option  value="0">المحافظة</option>
                     <option>أسوان</option>
                     <option>أسيوط</option>
                     <option>الأقصر</option>
@@ -144,8 +150,8 @@ class Personal extends React.Component {
                   </select>                
                </div>
                <div className="col-6 px-1 py-2">
-                  <select className=" form-control user-field text-muted fz14 fh40  " > 
-                    <option>المنطقة</option>
+               <select className={this.state.areas==0?"user-field form-control text-muted fz14  fh40 ":"user-field form-control text-muted fh40 fw600 fcm3 fh40 "} name="areas" value={this.state.areas} onChange={this.handleChange} > 
+                    <option value="0">المنطقة</option>
                     <option>٦ أكتوبر / الشيخ زايد</option>
                     <option>الجيزة / المنيل</option>
                     <option>قصر النيل / الزمالك</option>
@@ -175,34 +181,44 @@ class Personal extends React.Component {
                     <option>دهشور / سقارة</option>
                     <option>المريوطية / صفط اللبن</option>
                     <option>امبابة / ميت عقبة</option>
+                    <option>أخرى</option>
                   </select>                
                </div>
                <p className=" col-12 fcm fz14 m-0 text-right fw600 ">عيد ميلادك</p>
                <div className="col-4 px-1 py-2">
-                  <input type="text" className=" form-control user-field fh40 fz20 fw600 fcm " placeholder="السنة" />
+                  <input type="number" className=" form-control user-field fh40 fz20 fw600 fcm3 " max="4" placeholder="السنة"name="year" value={this.state.year} onChange={this.handleChange} />
                </div>
                <div className="col-4 px-1 py-2">
-                  <input type="text" className=" form-control user-field fh40 fz20 fw600 fcm " placeholder="الشهر" />
+                  <input type="number" className=" form-control user-field fh40 fz20 fw600 fcm3 "max="2" placeholder="الشهر"name="month" value={this.state.month} onChange={this.handleChange} />
                </div>
                <div className="col-4 px-1 py-2">
-                  <input type="text" className=" form-control  user-field fh40 fz20 fw600 fcm " placeholder="اليوم" />
+                  <input type="number" className=" form-control  user-field fh40 fz20 fw600 fcm3 " min="1" max="2" placeholder="اليوم"name="day" value={this.state.day} onChange={this.handleChange} />
                </div>
                <p className=" col-12 fcm fz14 m-0 text-right fw600">أخر ٥ أرقام من البطاقة </p>
                 <div className=" col-12  text-right ">
-                      <input type="text" className=" inputNumber  fh40 fz22 fw600 fcm mx-1" placeholder=" X " maxlength="1" onChange={()=>console.log()}/>
-                      <input type="text" className=" inputNumber  fh40 fz22 fw600 fcm mx-1" placeholder=" X "maxlength="1" />
-                      <input type="text" className=" inputNumber  fh40 fz22 fw600 fcm mx-1" placeholder=" X " maxlength="1"/>
-                      <input type="text" className=" inputNumber  fh40 fz22 fw600 fcm mx-1" placeholder=" X "maxlength="1" />
-                      <input type="text" className=" inputNumber  fh40 fz22 fw600 fcm mx-1" placeholder=" X "maxlength="1" />
+                      <input type="number" className=" inputNumber  fh40 fz22 fw600 fcm3 mx-1" placeholder=" X " max="1" name="ID1" value={this.state.ID1} onChange={this.handleChange} />
+                      <input type="number" className=" inputNumber  fh40 fz22 fw600 fcm3 mx-1" placeholder=" X "max="1"  name="ID2" value={this.state.ID2} onChange={this.handleChange} />
+                      <input type="number" className=" inputNumber  fh40 fz22 fw600 fcm3 mx-1" placeholder=" X " max="1" name="ID3" value={this.state.ID3} onChange={this.handleChange} />
+                      <input type="number" className=" inputNumber  fh40 fz22 fw600 fcm3 mx-1" placeholder=" X "max="1"  name="ID4" value={this.state.ID4} onChange={this.handleChange}  />
+                      <input type="number" className=" inputNumber  fh40 fz22 fw600 fcm3 mx-1" placeholder=" X "max="1"  name="ID5" value={this.state.ID5} onChange={this.handleChange} />
                 </div>
+
+{ Object.keys(this.state).length===17?
                 <div className=" pt-3 d-flex align-items-center " onClick={()=>this.handleStatus("1")}>
+                      <img src={NextActive} alt="Next" className="mx-2 icon25"/>
+                      <p className=" fz24 text-muted mt-2 fw600 fcm m-1">التالي</p>
+                </div>
+                :
+                <div className=" pt-3 d-flex align-items-center " >
                       <img src={Next} alt="Next" className="mx-2 icon25"/>
                       <p className=" fz24 text-muted mt-2 fw600 m-1">التالي</p>
                 </div>
+}
+                
+                
           </div>
           </>
          :
-         
          <>
             <div className="nav     d-flex align-items-center justify-content-center">
             <div className=" col-2 ">
@@ -233,29 +249,28 @@ class Personal extends React.Component {
             </div>
             <div className=" mx-auto  row m-0   py-2 d-flex justify-content-center align-items-center">
                 <img  src={plus} alt="" className="icon20  mx-2 " onClick={()=>this.setState({ children:  (this.state.children+1) })}/>
-                  <input type="text" className="InputCounter mx-2" name="children" value={this.state.children} onChange={this.handleChange}/>
+                  <input type="text" className={this.state.children===0?"InputCounter mx-2 text-muted":"InputCounter mx-2 "} name="children" value={this.state.children} onChange={this.handleChange}/>
                 <img  src={minus} alt="" className="icon20  mx-2 " onClick={()=>this.setState({ children:  this.state.children-1 })}/>
             </div>
             <div className="col-8 mx-auto py-3">
-                  <select className="user-field form-control text-muted fz14 fh40  " disabled={this.state.children===0?"disabled":''}> 
-                    <option>متوسط عمر الأولاد</option>
-                    <option>٠ ل ٢ سنة</option>
-                    <option>٢ ل ٥ سنين</option>
-                    <option>٦ ل ١٢ سنة</option>
-                    <option>١٣ ل ١٩ سنة</option>
-                    <option>١٩+ سنة</option>
+                  <select className={this.state.children2==0?"user-field form-control text-muted fz14 fh40":"user-field form-control text-muted fh40 fw600 fcm3 fh40 "} disabled={this.state.children===0?"disabled":''} name="children2" value={this.state.children2} onChange={this.handleChange}> 
+                    <option value="0">متوسط عمر الأولاد</option>
+                    <option>من ٠ ل ٢ سنة</option>
+                    <option>من ٢ ل ٥ سنين</option>
+                    <option>من ٦ ل ١٢ سنة</option>
+                    <option>من ١٣ ل ١٩ سنة</option>
+                    <option>من ١٩+ سنة</option>
 
                   </select> 
             </div>
             <div className="line-copy-2 col-8 mx-auto"></div>
-
             <p className="fz18 fcm col-9 m-0 p-0 fw600 pt-4 mx-auto">
             عندنا عروض خاصة للمؤسسات دي،
             </p>
             <p className=" fw500 fz14 m-0">هل إنت جزء من أي من واحدة فيهم؟  </p>
             <div className="col-10 mx-auto py-3">
-                  <select className="user-field form-control text-muted fz14   " > 
-                    <option>AUC, GSC, Endeavor</option>
+                  <select className={this.state.institutions==0?"user-field form-control text-muted fz14":"user-field form-control text-muted  fw600 fcm3"} name="institutions" value={this.state.institutions} onChange={this.handleChange}> 
+                    <option  value="0">إختار</option>
                     <option>AUC</option>
                     <option>GUC</option>
                     <option>Cairo University</option>
@@ -264,7 +279,7 @@ class Personal extends React.Component {
                     <option>Shooting Club</option>
                     <option>Heliopolis Club</option>
                     <option>Wadi Degla Club</option>
-
+                    <option>none</option>
                   </select> 
             </div>
             <img src={happiness} alt="" className="col-5 p-4"/>
@@ -280,16 +295,9 @@ class Personal extends React.Component {
             </div>
             <Link to="/FinancialInformation"><img src={facebook} alt="" className="col-9 p-2 mt-2"/></Link>
             <Link to="/FinancialInformation"><img src={google} alt="" className="col-9 p-2 mb-2"/></Link>
-
           </div>
-          
           </>
-         
-         
-         
-         
          }
-
       </div>
     );
   }

@@ -42,6 +42,10 @@ class Calculate extends React.Component {
 
     }
   }
+  handleChange = (e) => {
+    this.setState({ [e.target.name]: e.target.value })
+  }
+ 
   handleAmountCredit=(e)=>{
     this.props.GetDurationByAmmout(e.target.value)
     this.setState({ [e.target.name]: e.target.value })
@@ -52,6 +56,19 @@ class Calculate extends React.Component {
   }
   handleStatus=(N)=>{
     this.setState({status:N})
+  }
+  GetBankCreditCards=(e)=>{
+    this.setState({BankName:e})
+    this.props.GetBankCreditCards(this.props.AllBanks[e].ID,0)
+  }
+  handleAddCard=()=>{
+      let Data=JSON.parse(localStorage.getItem("Data"))
+      let item={BankName:this.state.BankName,BankCards:this.state.BankCards,amount:this.state.amount}
+      Data.push(item)
+      this.setState({Data:Data})
+      localStorage.setItem("Data",JSON.stringify(Data))
+      // [{"BankName":"1","BankCards":"2.69","amount":"1000"},{"BankName":"3","BankCards":"2.95","amount":"1000"}]
+      document.getElementById("closeModel").click()
   }
   handleselect=()=>{
     let i;
@@ -100,8 +117,8 @@ class Calculate extends React.Component {
 
                     {this.state.Data&&this.props.AllBanks&&this.state.Data.map((x,i)=>{
                       return (
-                        <div className="col-4 text-center p-2 px-3" onClick={()=>this.setState({ActiveData:this.state.Data[i]})}>
-                      <div className={this.state.ActiveData===this.state.Data[i]?" mx-auto p-0 p-0 borderimg text-center bg-white ActiveBorder":" mx-auto p-0 p-0 borderimg text-center bg-white"} data-toggle="modal" data-target="#exampleModalScrollable">
+                        <div className="col-4 text-center p-2 px-3" onClick={()=>this.setState({ActiveData:this.state.Data[i],duration:0,handleAmountCredit:0})}>
+                      <div className={this.state.ActiveData===this.state.Data[i]?" mx-auto p-0 p-0 borderimg text-center bg-white ActiveBorder":" mx-auto p-0 p-0 borderimg text-center bg-white"} >
                         <img src={this.props.AllBanks[this.state.Data[i].BankName].logo} alt="" className=" mx-auto text-center   bgwhite"style={{height:"100%",width:"100%",objectFit:"contain"}} />
                         {/* <img src={AddCreditCard} alt="" className=" mx-auto text-center  imagestyle bgwhite" /> */}
                       </div>
@@ -109,13 +126,66 @@ class Calculate extends React.Component {
                       )
                     })}
                     
-                  <div className="col-4 text-center p-2 px-3">
+
+
+
+
+
+                  <div className="col-4 text-center p-2 px-3"  data-toggle="modal" data-target={`#exampleModalScrollable`}>
                       <div className="  mx-auto p-0 p-2 borderimg text-center" data-toggle="modal" data-target="#exampleModalScrollable">
                         <img src={AddCreditCard} alt="" className=" mx-auto text-center  imagestyle bgwhite" />
                         {/* <img src={AddCreditCard} alt="" className=" mx-auto text-center  imagestyle bgwhite" /> */}
                       </div>
                     </div>
               </div>
+              <div class="modal fade" id={`exampleModalScrollable`} tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-scrollable" role="document">
+                        <div class="modal-content">
+                          
+                          <div class="modal-body pt-5">
+                              <p class="fz28 linetext fcm m-0">تفاصيل الكرديت كارد:</p>
+                              <div className="col-12 mx-auto pt-3">
+                                    <select className={!this.state.BankName?"user-field form-control text-muted fz14   ":"user-field form-control text-muted fz20 fcm fw600 "}name="BankName"  onChange={(e)=>this.GetBankCreditCards(e.target.value)} value={this.state.BankName}> 
+                                      <option value="0">اسم البنك</option>
+                                      {this.props.AllBanks&&this.props.AllBanks.map((x,i)=>{
+                                       return <option value={i}  key={i}>{x.Name}</option>
+
+                                      })}
+                                    </select> 
+                              </div>
+                              <div className="col-12 mx-auto py-3 ">
+                                    <select className={!this.state.BankCards?"user-field form-control text-muted fz14   ":"user-field form-control text-muted fz20 fcm fw600 "}name="BankCards"  onChange={this.handleChange} disabled={this.props.BankCreditsCards?"":"disabled"}> 
+                                      <option value="0">نوع الكرديت كارد</option>
+                                      {this.props.BankCreditsCards&&this.props.BankCreditsCards[0]&&this.props.BankCreditsCards[0].map((x,i)=>{
+                                       return <option value={x.Intrest} key={i}>{x.Name}</option>
+                                      })}
+                                    </select> 
+                              </div> 
+                              
+                              <div className="col-12   relative">
+                                <input type="number" className="user-field form-control fz22 fw600 fcm "name="amount" onChange={this.handleChange} id={i}  value={this.state.amount} placeholder="الحد الائتماني " />
+                                <span className="Pound fz16 text-muted">جنيه</span>
+                                <hr className="PoundInputhr" />
+                              </div>
+                              
+{this.state.BankCards&&this.state.BankName&&this.state.amount?
+                                <p class="fz28 text-muted text-right px-3 py-2 fcm fw600 m-0"onClick={()=>this.handleAddCard()} >أضف</p>
+                             :
+                             <p class="fz28 text-muted text-right px-3 py-2  fw600 m-0" >أضف</p>
+
+                             }
+                              <p id={`closeModel`}   data-target=".modal"  data-dismiss="modal"></p>
+                          </div>
+                          
+                        </div>
+                      </div>
+                      </div>
+
+
+
+
+
+
 
               <div className=" row m-0 col-12 pt-4 d-flex align-items-center">
                 <div className="col-2 p-0"></div>
@@ -133,7 +203,7 @@ class Calculate extends React.Component {
                         {items}
                       </select> 
                  </div>
-              {this.props.GeneralResult&&<>
+              {this.props.GeneralResult&&this.state.handleAmountCredit!==0&& <>
                  <div className=" row m-0 col-12 pt-5 ">
                 <div className="col-2 p-0"></div>
                   <div className="fz20 fcm col-8 m-0 p-0 resultsec b_r p-0  "> 

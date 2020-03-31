@@ -130,7 +130,24 @@
     .borderimg{
 
     }
+    .modal-dialog-scrollable .modal-content{
+      border: 1px solid $maincolorf;
+      background-color: $maincolor;
 
+    }
+    .modal-dialog{
+      margin-top: 20%;
+    }
+    .PoundInputhr{
+      position: absolute;
+      top: 42%;
+      width: 85%;
+      right: 7%;
+      border-color: #B5B5B5;
+    }
+    .linetext{
+      text-decoration: underline;
+  }
     // .result{
     //   font-size: 120px!important;
     //   color: #66FFCC;
