@@ -101,7 +101,7 @@ class Calculate extends React.Component {
                     {this.state.Data&&this.props.AllBanks&&this.state.Data.map((x,i)=>{
                       return (
                         <div className="col-4 text-center p-2 px-3" onClick={()=>this.setState({ActiveData:this.state.Data[i]})}>
-                      <div className={this.state.ActiveData===this.state.Data[i]?" mx-auto p-0 p-0 borderimg text-center ActiveBorder":" mx-auto p-0 p-0 borderimg text-center"} data-toggle="modal" data-target="#exampleModalScrollable">
+                      <div className={this.state.ActiveData===this.state.Data[i]?" mx-auto p-0 p-0 borderimg text-center bg-white ActiveBorder":" mx-auto p-0 p-0 borderimg text-center bg-white"} data-toggle="modal" data-target="#exampleModalScrollable">
                         <img src={this.props.AllBanks[this.state.Data[i].BankName].logo} alt="" className=" mx-auto text-center   bgwhite"style={{height:"100%",width:"100%",objectFit:"contain"}} />
                         {/* <img src={AddCreditCard} alt="" className=" mx-auto text-center  imagestyle bgwhite" /> */}
                       </div>

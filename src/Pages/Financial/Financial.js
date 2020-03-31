@@ -65,10 +65,10 @@ class Personal extends React.Component {
     })
       this.props.GetBankCreditCards( this.props.AllBanks[e.target.value].ID)
   }
-  handleSubmit=()=>{
+  handleSubmit=(i)=>{
     localStorage.removeItem("Data")
     localStorage.setItem('Data', JSON.stringify(this.state.Alldata));
-    document.getElementById("closeModel").click()
+    document.getElementById(`closeModel${i}`).click()
   }
   render() {
     
@@ -190,8 +190,8 @@ class Personal extends React.Component {
                                 <span className="Pound fz16 text-muted">جنيه</span>
                                 <hr className="PoundInputhr" />
                               </div>
-                              <p class="fz28 text-muted text-right px-3 py-2 fw600 m-0" onClick={this.handleSubmit}  >أضف</p>
-                              <p id="closeModel" style={{display:"none"}}   data-dismiss="modal"></p>
+                              <p class="fz28 text-muted text-right px-3 py-2 fw600 m-0" onClick={()=>this.handleSubmit(i)}  >أضف</p>
+                              <p id={`closeModel${i}`} style={{}}  data-target=".modal"  data-dismiss="modal"></p>
                           </div>
                           
                         </div>
