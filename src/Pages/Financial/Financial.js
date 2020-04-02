@@ -144,16 +144,17 @@ class Personal extends React.Component {
                       <div className="col-6 text-center p-2 px-3">
                         {this.state.Alldata&&this.state.Alldata[i]?this.state.Alldata[i].BankName?
                       <div className=" bg-white  mx-auto p-0 p-0 borderimg text-center" data-toggle="modal" data-target={`#exampleModalScrollable${i}`}>
-                        <img src={this.props.AllBanks[this.state.Alldata[i].BankName].logo} alt="" className=" mx-auto text-center   bgwhite"style={{height:"100%",width:"100%",objectFit:"contain"}} />
+                        <img src={this.props.AllBanks[this.state.Alldata[i].BankName].logo} alt="" className=" mx-auto text-center   bgwhite"style={{height:"80%",width:"100%",objectFit:"contain"}} />
+                        <p className="fz14 fw600 m-0 fcm">{this.props.AllBanks[this.state.Alldata[i].BankName].Name}</p>
                         </div>
                         :      
                         <div className="  mx-auto p-0 p-2 borderimg text-center" data-toggle="modal" data-target={`#exampleModalScrollable${i}`}>
-                        <img src={AddCreditCard} alt="" className=" mx-auto text-center  imagestyle bgwhite" />
+                        <img src={AddCreditCard} alt="" className=" mx-auto text-center  imagestyle bgwhite" style={{height:"80%",width:"100%",objectFit:"contain"}}/>
                         <p className="mmt15 fcm fz14  fw600">كرديت كارد {i+1}</p>
                         </div>
                         :      
                         <div className="  mx-auto p-0 p-2 borderimg text-center" data-toggle="modal" data-target={`#exampleModalScrollable${i}`}>
-                        <img src={AddCreditCard} alt="" className=" mx-auto text-center  imagestyle bgwhite" />
+                        <img src={AddCreditCard} alt="" className=" mx-auto text-center  imagestyle bgwhite" style={{height:"80%",width:"100%",objectFit:"contain"}}/>
                         <p className="mmt15 fcm fz14  fw600">كرديت كارد {i+1}</p>
                         </div>
                       }
@@ -166,7 +167,7 @@ class Personal extends React.Component {
                               <p class="fz28 linetext fcm m-0">تفاصيل الكرديت كارد:</p>
                               <div className="col-12 mx-auto pt-3">
                                     <select className={this.state.Alldata[i]?!this.state.Alldata[i].BankName?"user-field form-control text-muted fz14   ":"user-field form-control fw600 fz20 fcm4 ":"user-field form-control text-muted fz14 "}name="BankName"  onChange={(e)=>this.GetBankCreditCards(e,i)} value={this.state.Alldata[i]&&this.state.Alldata[i].BankName}> 
-                                      <option value="0">اسم البنك</option>
+                                      <option >اسم البنك</option>
                                       {this.props.AllBanks&&this.props.AllBanks.map((x,i)=>{
                                        return <option value={i}  key={i}>{x.Name}</option>
 
@@ -263,7 +264,7 @@ class Personal extends React.Component {
                 </div>
                 <div className=" col-12 mx-auto  row m-0   py-2 d-flex justify-content-center align-items-center">
                     <img  src={plus} alt="" className="icon20  mx-2 " onClick={()=>this.setState({ bank:  (this.state.bank+1) })}/>
-                      <input type="text" className="InputCounter mx-2" name="bank" value={this.state.bank} onChange={this.handleChange}/>
+                      <input type="text" className={this.state.bank?"InputCounter mx-2":"InputCounter mx-2 text-muted"} name="bank" value={this.state.bank} onChange={this.handleChange}/>
                     <img  src={minus} alt="" className="icon20  mx-2 " onClick={()=>this.setState({ bank:  this.state.bank-1 })}/>
                 </div>
                 <div className="line-copy-2 col-8 mx-auto my-3"></div>
@@ -283,7 +284,7 @@ class Personal extends React.Component {
                 </div>
                 <div className=" col-12 mx-auto  row m-0   py-2 d-flex justify-content-center align-items-center">
                     <img  src={plus} alt="" className="icon20  mx-2 " onClick={()=>this.setState({ tshelat:  (this.state.tshelat+1) })}/>
-                      <input type="text" className="InputCounter mx-2" name="tshelat" value={this.state.tshelat} onChange={this.handleChange}/>
+                      <input type="text" className={this.state.tshelat?"InputCounter mx-2":"InputCounter mx-2 text-muted"} name="tshelat" value={this.state.tshelat} onChange={this.handleChange}/>
                     <img  src={minus} alt="" className="icon20  mx-2 " onClick={()=>this.setState({ tshelat:  this.state.tshelat-1 })}/>
                 </div>
                 <div className="line-copy-2 col-8 mx-auto my-3"></div>
@@ -297,9 +298,9 @@ class Personal extends React.Component {
                   </p>
                   <div className="col-2 p-0"><img src={help} alt="" className="icon20   " /></div>
                 </div>
-                <div className=" col-12 mx-auto  row m-0   py-2 d-flex justify-content-center align-items-center">
+                <div className=" col-12 mx-auto  row m-0  pb-5 mb-2 py-2 d-flex justify-content-center align-items-center">
                     <img  src={plus} alt="" className="icon20  mx-2 " onClick={()=>this.setState({ cars:  (this.state.cars+1) })}/>
-                      <input type="text" className="InputCounter mx-2" name="cars" value={this.state.cars} onChange={this.handleChange}/>
+                      <input type="text" className={this.state.cars?"InputCounter mx-2":"InputCounter mx-2 text-muted"} name="cars" value={this.state.cars} onChange={this.handleChange}/>
                     <img  src={minus} alt="" className="icon20  mx-2 " onClick={()=>this.setState({ cars:  this.state.cars-1 })}/>
                 </div>
                 </div>

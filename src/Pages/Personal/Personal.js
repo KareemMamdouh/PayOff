@@ -83,17 +83,17 @@ class Personal extends React.Component {
             </div>
             <div className="row m-0 px-3 py-3">
                   <div className="col-6 p-0 px-2 borderimg">
-                  <img src={this.state.Activeimg?IDFront:AddCard} alt="" className=" h-100  w-100  borderimg" onClick={()=>this.setState({Activeimg:true})} />
+                  <img src={this.state.Activeimg?IDFront:AddCard} alt="" className=" h-100  w-100  borderimg" onClick={()=>this.setState({Activeimg:true,"name": "محمد احمد  عثمان","Address": "ش محمد توفيق احمد ","status": 0, "children": 0,"type": "ذكر","Socialstatus": "أعزب","Governorate": "القاهرة","areas": "لعجوزة / الدقي", "children2": 0,"institutions": 0, "Activeimg": true,"year": "1970","month": "4","day": "1", "ID1": "5","ID2": "6","ID3": "7","ID4": "8","ID5": "6"})} />
                   </div>
                   <div className="col-6 p-0 px-2 borderimg">
-                  <img src={this.state.Activeimg?IDBack:AddCard2} alt="" className=" h-100  w-100  borderimg" onClick={()=>this.setState({Activeimg:true})} />
+                  <img src={this.state.Activeimg?IDBack:AddCard2} alt="" className=" h-100  w-100  borderimg" onClick={()=>this.setState({Activeimg:true,"name": "محمد احمد  عثمان","Address": "ش محمد توفيق احمد ","status": 0, "children": 0,"type": "ذكر","Socialstatus": "أعزب","Governorate": "القاهرة","areas": "لعجوزة / الدقي", "children2": 0,"institutions": 0, "Activeimg": true,"year": "1970","month": "4","day": "1", "ID1": "5","ID2": "6","ID3": "7","ID4": "8","ID5": "6"})} />
 
                   </div>
             </div>
           </div>
           <div className=" row m-0 px-3 pt-0 pb-3">
                 <div className="col-12 px-1 pb-2">
-                    <input type="text" className="user-field form-control fz22 fw600 fcm3 " placeholder="الإسم بالكامل" />
+                    <input type="text" className="user-field form-control fz22 fw600 fcm3 " placeholder="الإسم بالكامل" name="name" value={this.state.name} onChange={this.handleChange}/>
                 </div>
                 <div className="col-6 px-1 py-2 pb-3">
                   <select className={this.state.type==0?"user-field form-control text-muted fz14 fh40  ":"user-field form-control text-muted fz20 fcm3 fh40 fw600 "}name="type" value={this.state.type} onChange={this.handleChange}> 
@@ -113,7 +113,7 @@ class Personal extends React.Component {
                   </select>                
                </div>
                <div className="col-12 px-1 pb-2">
-                    <input type="text" className="user-field form-control fz22 fw600 fcm3 " placeholder="العنوان الأساسي" />
+                    <input type="text" className="user-field form-control fz22 fw600 fcm3 " placeholder="العنوان الأساسي"name="Address" value={this.state.Address} onChange={this.handleChange} />
                 </div>
                 <div className="col-6 px-1 py-2">
                 <select className={this.state.Governorate==0?"user-field form-control text-muted fz14  fh40 ":"user-field form-control text-muted fh40 fw600 fcm3 fh40 "} name="Governorate" value={this.state.Governorate} onChange={this.handleChange} > 
@@ -203,7 +203,7 @@ class Personal extends React.Component {
                       <input type="number" className=" inputNumber  fh40 fz22 fw600 fcm3 mx-1" placeholder=" X "max="1"  name="ID5" value={this.state.ID5} onChange={this.handleChange} />
                 </div>
 
-{ Object.keys(this.state).length===17?
+{ Object.keys(this.state).length===19?
                 <div className=" pt-3 d-flex align-items-center " onClick={()=>this.handleStatus("1")}>
                       <img src={NextActive} alt="Next" className="mx-2 icon25"/>
                       <p className=" fz24 text-muted mt-2 fw600 fcm m-1">التالي</p>
@@ -255,11 +255,11 @@ class Personal extends React.Component {
             <div className="col-8 mx-auto py-3">
                   <select className={this.state.children2==0?"user-field form-control text-muted fz14 fh40":"user-field form-control text-muted fh40 fw600 fcm3 fh40 "} disabled={this.state.children===0?"disabled":''} name="children2" value={this.state.children2} onChange={this.handleChange}> 
                     <option value="0">متوسط عمر الأولاد</option>
-                    <option>من ٠ ل ٢ سنة</option>
-                    <option>من ٢ ل ٥ سنين</option>
-                    <option>من ٦ ل ١٢ سنة</option>
-                    <option>من ١٣ ل ١٩ سنة</option>
-                    <option>من ١٩+ سنة</option>
+                    <option> ٠ ل ٢ سنة</option>
+                    <option> ٢ ل ٥ سنين</option>
+                    <option> ٦ ل ١٢ سنة</option>
+                    <option> ١٣ ل ١٩ سنة</option>
+                    <option> ١٩+ سنة</option>
 
                   </select> 
             </div>

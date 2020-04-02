@@ -31,8 +31,8 @@ class Calculate extends React.Component {
     this.handleSaveImage=this.handleSaveImage.bind(this)
   }
   componentDidMount() {
-    
-    this.setState({Data:JSON.parse(localStorage.getItem("Data"))})
+      let bank=JSON.parse(localStorage.getItem("Data"))
+    this.setState({Data:JSON.parse(localStorage.getItem("Data")),ActiveData:bank[0]})
     this.props.GetAllBanks()
   }
   handleChangeSelect = (e) => {
@@ -118,9 +118,11 @@ class Calculate extends React.Component {
                     {this.state.Data&&this.props.AllBanks&&this.state.Data.map((x,i)=>{
                       return (
                         <div className="col-4 text-center p-2 px-3" onClick={()=>this.setState({ActiveData:this.state.Data[i],duration:0,handleAmountCredit:0})}>
-                      <div className={this.state.ActiveData===this.state.Data[i]?" mx-auto p-0 p-0 borderimg text-center bg-white ActiveBorder":" mx-auto p-0 p-0 borderimg text-center bg-white"} >
-                        <img src={this.props.AllBanks[this.state.Data[i].BankName].logo} alt="" className=" mx-auto text-center   bgwhite"style={{height:"100%",width:"100%",objectFit:"contain"}} />
+                      <div className={this.state.ActiveData.BankName==this.state.Data[i].BankName?" mx-auto p-0 p-0 borderimg text-center bg-white ActiveBorder":" mx-auto p-0 p-0 borderimg text-center bg-white"} >
+                        <img src={this.props.AllBanks[this.state.Data[i].BankName].logo} alt="" className=" mx-auto text-center   bgwhite"style={{height:"75%",width:"100%",objectFit:"contain"}} />
                         {/* <img src={AddCreditCard} alt="" className=" mx-auto text-center  imagestyle bgwhite" /> */}
+                        <p className="fz12 fw600 m-0 fcm">{this.props.AllBanks[this.state.Data[i].BankName].Name}</p>
+ 
                       </div>
                     </div>
                       )
@@ -190,7 +192,7 @@ class Calculate extends React.Component {
               <div className=" row m-0 col-12 pt-4 d-flex align-items-center">
                 <div className="col-2 p-0"></div>
                   <div className="col-8 px-1 py-2">
-                    <input type="text" className=" form-control fcm fz24 fw600 user-field     " name="handleAmountCredit" value={this.state.handleAmountCredit} onChange={this.handleAmountCredit} placeholder="مديونية الكرديت كارد؟ " />
+                    <input type="number" className=" form-control fcm fz24 fw600 user-field     " name="handleAmountCredit" value={this.state.handleAmountCredit} onChange={this.handleAmountCredit} placeholder="مديونية الكرديت كارد؟ " />
                     <span className="Pound fz16 text-muted">جنيه</span>
 
                 </div>
@@ -203,21 +205,21 @@ class Calculate extends React.Component {
                         {items}
                       </select> 
                  </div>
-              {this.props.GeneralResult&&this.state.handleAmountCredit!==0&& <>
-                 <div className=" row m-0 col-12 pt-5 ">
-                <div className="col-2 p-0"></div>
-                  <div className="fz20 fcm col-8 m-0 p-0 resultsec b_r p-0  "> 
+              {this.props.GeneralResult&&this.state.handleAmountCredit!==0&&this.state.duration!==0&& <>
+                 <div className=" row m-0 col-12 pt-5 d-flex justify-content-between">
+                <div className="col-1 p-0"></div>
+                  <div className="fz20 fcm col-9 m-0 p-0 resultsec b_r p-0  "> 
                             <span className="fz12 fcm fw600 ">هتدفع شهرياً </span>
-                            <span className="fz30 fw600 fcm ">{this.props.GeneralResult.monthlypaid} </span>
+                            <span className="fz34 fw600 fcm ">{this.props.GeneralResult.monthlypaid} </span>
                             <span className="fz12 fcm fw600">جنيه </span>
                             <div className="fz20 fcm col-152 m-0 p-0 resultsec2 b_r p-0 pt-2 m-0"> 
                                   <span className="fz12 fcm fw600 ">هتوفر  </span>
-                                  <span className="fz49 fh35 fw600 fcm "> {this.props.GeneralResult.discount} </span>
+                                  <span className="fz45 fh35 fw600 fcm "> {this.props.GeneralResult.discount} </span>
                                   <span className="fz12 fcm fw600">جنيه </span>
                             </div>
 
                    </div>
-                   <div className="col-2 p-0 text-center d-flex align-content-around flex-wrap"><div className="d-block w-100 text-center px-3"><img src={help} alt="" className="icon20 d-block  " /></div><div className="d-block w-100 text-center px-3"> <img src={help} alt="" className="icon20 d-block  " /></div></div>
+                   <div className="col-1 p-0 text-center d-flex align-content-around flex-wrap"><div className="d-block w-100 text-center px-3"><img src={help} alt="" className="icon20 d-block  " /></div><div className="d-block w-100 text-center px-3"> <img src={help} alt="" className="icon20 d-block  " /></div></div>
                 </div>
               
                 <div className=" col-12 px-4">
