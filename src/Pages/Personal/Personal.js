@@ -203,7 +203,7 @@ class Personal extends React.Component {
                       <input type="number" className=" inputNumber  fh40 fz22 fw600 fcm3 mx-1" placeholder=" X "max="1"  name="ID5" value={this.state.ID5} onChange={this.handleChange} />
                 </div>
 
-{ Object.keys(this.state).length===19?
+{ Object.keys(this.state).length===19||(Object.keys(this.state).length===18&&!this.state.Activeimg)?
                 <div className=" pt-3 d-flex align-items-center " onClick={()=>this.handleStatus("1")}>
                       <img src={NextActive} alt="Next" className="mx-2 icon25"/>
                       <p className=" fz24 text-muted mt-2 fw600 fcm m-1">التالي</p>
