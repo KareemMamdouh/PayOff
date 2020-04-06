@@ -145,7 +145,7 @@ class Personal extends React.Component {
                         {this.state.Alldata&&this.state.Alldata[i]?this.state.Alldata[i].BankName?
                       <div className=" bg-white  mx-auto p-0 p-0 borderimg text-center" data-toggle="modal" data-target={`#exampleModalScrollable${i}`}>
                         <img src={this.props.AllBanks[this.state.Alldata[i].BankName].logo} alt="" className=" mx-auto text-center   bgwhite"style={{height:"80%",width:"100%",objectFit:"contain"}} />
-                        <p className="fz14 fw600 m-0 fcm">{this.props.AllBanks[this.state.Alldata[i].BankName].Name}</p>
+                        <p className="fz14 fw600 m-0 fcm">{this.state.Alldata&&this.state.Alldata[i].BankCards&&JSON.parse(this.state.Alldata[i].BankCards).Name}</p>
                         </div>
                         :      
                         <div className="  mx-auto p-0 p-2 borderimg text-center" data-toggle="modal" data-target={`#exampleModalScrollable${i}`}>
@@ -178,7 +178,7 @@ class Personal extends React.Component {
                                     <select className={this.state.Alldata[i]?!this.state.Alldata[i].BankCards?"user-field form-control text-muted fz14   ":"user-field form-control fw600 fz20 fcm4 ":"user-field form-control text-muted fz14 "}name="BankCards"  onChange={(e)=>this.handleChange(e,i)} disabled={this.props.BankCreditsCards?"":"disabled"}> 
                                       <option value="0">نوع الكرديت كارد</option>
                                       {this.props.BankCreditsCards&&this.props.BankCreditsCards[i]&&this.props.BankCreditsCards[i].map((x,i)=>{
-                                       return <option value={x.Intrest} key={i}>{x.Name}</option>
+                                       return <option value={JSON.stringify(x)} key={i}>{x.Name}</option>
                                       })}
                                     </select> 
 
@@ -207,7 +207,7 @@ class Personal extends React.Component {
                 
           </div>
           
-                {this.state.Alldata[0].BankCards>1?
+                {this.state.Alldata[0].BankCards&&this.state.Alldata[0].BankCards.length>1?
                 <div className="  d-flex align-items-center nextstep" onClick={()=>this.handleStatus("1")}>
                 <img src={NextActive} alt="Next" className="mx-2 icon25"/>
                       <p className=" fz24  mt-2 fw600 fcm m-1">التالي</p>
@@ -306,17 +306,10 @@ class Personal extends React.Component {
                 </div>
                 
 
-                {this.state.tshelat&&this.state.cars&&this.state.bank?
                 <div className="  d-flex align-items-center nextstep" onClick={()=>this.handleStatus("2")}>
                 <img src={NextActive} alt="Next" className="mx-2 icon25"/>
                       <p className=" fz24  mt-2 fw600 fcm m-1">التالي</p>
                 </div>
-                :
-                <div className="  d-flex align-items-center nextstep"  >
-                      <img src={Next} alt="Next" className="mx-2 icon25"/>
-                      <p className=" fz24 text-muted mt-2 fw600 m-1">التالي</p>
-                </div>
-}
           </>
           :
           <>

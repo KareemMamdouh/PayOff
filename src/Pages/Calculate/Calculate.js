@@ -34,15 +34,14 @@ class Calculate extends React.Component {
   componentDidMount() {
       let bank=JSON.parse(localStorage.getItem("Data"))
       if(bank){
-        this.setState({Data:JSON.parse(localStorage.getItem("Data")),ActiveData:bank[0]})
+        this.setState({Data:JSON.parse(localStorage.getItem("Data")),ActiveData:{...bank[0],"BankCards":JSON.parse(bank[0].BankCards)}})
       }
     this.props.GetAllBanks()
   }
   handleChangeSelect = (e) => {
     this.setState({ [e.target.name]: e.target.value })
     if(this.state.ActiveData){
-      this.props.GeneralCalculate(this.state.handleAmountCredit,e.target.value,this.state.ActiveData.BankCards)
-
+      this.props.GeneralCalculate(this.state.handleAmountCredit,e.target.value,this.state.ActiveData.BankCards.Intrest)
     }
   }
   handleChange = (e) => {
@@ -122,11 +121,11 @@ class Calculate extends React.Component {
 
                     {this.state.Data&&this.props.AllBanks&&this.state.Data.map((x,i)=>{
                       return (
-                        <div className="col-4 text-center p-2 px-3" onClick={()=>this.setState({ActiveData:this.state.Data[i],duration:0,handleAmountCredit:0})}>
+                        <div className="col-4 text-center p-2 px-3" onClick={()=>this.setState({ActiveData:{...this.state.Data[i], "BankCards":JSON.parse(this.state.Data[i].BankCards)},duration:0,handleAmountCredit:0})}>
                       <div className={this.state.ActiveData.BankName==this.state.Data[i].BankName?" mx-auto p-0 p-0 borderimg text-center bg-white ActiveBorder":" mx-auto p-0 p-0 borderimg text-center bg-white"} >
                         <img src={this.props.AllBanks[this.state.Data[i].BankName].logo} alt="" className=" mx-auto text-center   bgwhite"style={{height:"75%",width:"100%",objectFit:"contain"}} />
                         {/* <img src={AddCreditCard} alt="" className=" mx-auto text-center  imagestyle bgwhite" /> */}
-                        <p className="fz12 fw600 m-0 fcm">{this.props.AllBanks[this.state.Data[i].BankName].Name}</p>
+                        <p className="fz12 fw600 m-0 fcm">{this.state.Data[i]&&JSON.parse(this.state.Data[i].BankCards).Name}</p>
  
                       </div>
                     </div>
@@ -164,7 +163,7 @@ class Calculate extends React.Component {
                                     <select className={!this.state.BankCards?"user-field form-control text-muted fz14   ":"user-field form-control text-muted fz20 fcm fw600 "}name="BankCards"  onChange={this.handleChange} disabled={this.props.BankCreditsCards?"":"disabled"}> 
                                       <option value="0">نوع الكرديت كارد</option>
                                       {this.props.BankCreditsCards&&this.props.BankCreditsCards[0]&&this.props.BankCreditsCards[0].map((x,i)=>{
-                                       return <option value={x.Intrest} key={i}>{x.Name}</option>
+                                       return <option value={JSON.stringify(x)} key={i}>{x.Name}</option>
                                       })}
                                     </select> 
                               </div> 
