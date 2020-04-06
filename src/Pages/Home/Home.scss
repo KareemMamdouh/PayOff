@@ -6,6 +6,35 @@
     min-height: 100vh; /* Fallback for browsers that do not support Custom Properties */
     min-height: calc(var(--vh, 1vh) * 100);
     overflow: hidden;
+    header{
+      background: linear-gradient(0deg, #CCFFFF 0%, #66FFCC 100%);
+
+    }
+    .line-copy-2 {
+      box-sizing: border-box;
+      height: 1px;
+      width: 80%;
+      border: 1px solid rgba(0,102,153,0.05);
+      transform: rotate(-359.98deg);
+    }
+    .table thead th{
+      border-bottom: none;
+    }
+    .table td, .table th{
+      border: none;
+
+    }
+    tr td:nth-child(2) {
+      background: $maincolorf;
+    }
+    .b_t_B{
+      border-radius: 0 0 5px 5px;
+
+    }
+    .b_t_T{
+      border-radius:  5px 5px 0 0;
+
+    }
     .Pound{
       position: absolute;
       

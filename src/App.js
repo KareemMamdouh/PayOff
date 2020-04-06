@@ -14,6 +14,9 @@ import Financial from "./Pages/Financial/Financial";
 import Work from "./Pages/Work/Work";
 import AcoountReady from "./Pages/AcoountReady/AcoountReady";
 import Calculate from "./Pages/Calculate/Calculate";
+import Appointment from "./Pages/Appointment/Appointment";
+
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -40,6 +43,9 @@ class App extends React.Component {
               <Route exact path="/Work" component={Work}></Route>
               <Route exact path="/AcoountReady" component={AcoountReady}></Route>
               <Route exact path="/Calculate" component={Calculate}></Route>
+              <Route exact path="/Appointment" component={Appointment}></Route>
+
+              
             </Switch>
           </div>
           {(this.props.successMessageAR ? <HandleRes title={this.props.successMessageAR} stylecss="alert-success" /> : '')}

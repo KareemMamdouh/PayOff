@@ -17,6 +17,7 @@ import VERIFY from "../../Images/VERIFY.png";
 import AddCreditCard from "../../Images/AddCreditCard.png";
 import Done from "../../Images/Done.png";
 import {GetAllBanks,GetBankCreditCards,GetDurationByAmmout,GeneralCalculate} from '../../redux/actions/index'
+import Shape from "../../Images/Shape.png";
 
 
 
@@ -32,7 +33,9 @@ class Calculate extends React.Component {
   }
   componentDidMount() {
       let bank=JSON.parse(localStorage.getItem("Data"))
-    this.setState({Data:JSON.parse(localStorage.getItem("Data")),ActiveData:bank[0]})
+      if(bank){
+        this.setState({Data:JSON.parse(localStorage.getItem("Data")),ActiveData:bank[0]})
+      }
     this.props.GetAllBanks()
   }
   handleChangeSelect = (e) => {
@@ -92,6 +95,8 @@ class Calculate extends React.Component {
          <>
          <div className="nav  d-flex align-items-center justify-content-center">
               <div className=" col-2 ">
+              <Link to="/"><img src={Shape} alt="" className="icon20  mt-1 " /></Link>
+
               </div>
                 <div className=" col-8 m-0 p-0">
                       <p className="m-0 text-white fz18 fw600">إحسب هتوفر كام</p>
@@ -223,11 +228,11 @@ class Calculate extends React.Component {
                 </div>
               
                 <div className=" col-12 px-4">
-                  <div  className="btn p-2 bgcm2  my-3   w-100  d-flex justify-content-between" onClick={this.handleCalc}>
+                  <Link to="/Appointment"  className="btn p-2 bgcm2  my-3   w-100  d-flex justify-content-between" onClick={this.handleCalc}>
                             <p className="icon20 m-0 " ></p>
-                            <p className="m-0 fcm2 fz20 fw600 m-0 mt-1">إحسب هتوفر كام</p>
+                            <p className="m-0 fcm2 fz20 fw600 m-0 mt-1">عاجبني العرض ده</p>
                             <img src={Done} alt="calculator" className=" p-0 " style={{ marginTop: 2 }} style={{width:30,height:30 ,objectFit:"cover"}}/>
-                    </div>
+                    </Link>
                 </div></>}
             
 
