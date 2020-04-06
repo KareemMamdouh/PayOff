@@ -152,7 +152,7 @@ class Calculate extends React.Component {
                               <p class="fz28 linetext fcm m-0">تفاصيل الكرديت كارد:</p>
                               <div className="col-12 mx-auto pt-3">
                                     <select className={!this.state.BankName?"user-field form-control text-muted fz14   ":"user-field form-control text-muted fz20 fcm fw600 "}name="BankName"  onChange={(e)=>this.GetBankCreditCards(e.target.value)} value={this.state.BankName}> 
-                                      <option value="0">اسم البنك</option>
+                                      <option >اسم البنك</option>
                                       {this.props.AllBanks&&this.props.AllBanks.map((x,i)=>{
                                        return <option value={i}  key={i}>{x.Name}</option>
 
