@@ -71,6 +71,7 @@ class Calculate extends React.Component {
       localStorage.setItem("Data",JSON.stringify(Data))
       // [{"BankName":"1","BankCards":"2.69","amount":"1000"},{"BankName":"3","BankCards":"2.95","amount":"1000"}]
       document.getElementById("closeModel").click()
+      this.setState({BankName:false,BankCards:false,amount:false})
   }
   handleselect=()=>{
     let i;
@@ -123,9 +124,9 @@ class Calculate extends React.Component {
                       return (
                         <div className="col-4 text-center p-2 px-3" onClick={()=>this.setState({ActiveData:{...this.state.Data[i], "BankCards":JSON.parse(this.state.Data[i].BankCards)},duration:0,handleAmountCredit:0})}>
                       <div className={this.state.ActiveData.BankName==this.state.Data[i].BankName?" mx-auto p-0 p-0 borderimg text-center bg-white ActiveBorder":" mx-auto p-0 p-0 borderimg text-center bg-white"} >
-                        <img src={this.props.AllBanks[this.state.Data[i].BankName].logo} alt="" className=" mx-auto text-center   bgwhite"style={{height:"75%",width:"100%",objectFit:"contain"}} />
+                        <img src={this.props.AllBanks[this.state.Data[i].BankName].logo} alt="" className=" mx-auto text-center   bgwhite"style={{height:"60%",width:"100%",objectFit:"contain"}} />
                         {/* <img src={AddCreditCard} alt="" className=" mx-auto text-center  imagestyle bgwhite" /> */}
-                        <p className="fz10 fw600 m-0 fcm">{this.state.Data[i]&&JSON.parse(this.state.Data[i].BankCards).Name}</p>
+                        <p className="fz12 fw600 m-0 fcm" style={{lineHeight:"12px"}}>{this.state.Data[i]&&JSON.parse(this.state.Data[i].BankCards).Name}</p>
  
                       </div>
                     </div>
@@ -161,7 +162,7 @@ class Calculate extends React.Component {
                               </div>
                               <div className="col-12 mx-auto py-3 ">
                                     <select className={!this.state.BankCards?"user-field form-control text-muted fz14   ":"user-field form-control text-muted fz20 fcm fw600 "}name="BankCards"  onChange={this.handleChange} disabled={this.props.BankCreditsCards?"":"disabled"}> 
-                                      <option value="0">نوع الكرديت كارد</option>
+                                      <option >نوع الكرديت كارد</option>
                                       {this.props.BankCreditsCards&&this.props.BankCreditsCards[0]&&this.props.BankCreditsCards[0].map((x,i)=>{
                                        return <option value={JSON.stringify(x)} key={i}>{x.Name}</option>
                                       })}
