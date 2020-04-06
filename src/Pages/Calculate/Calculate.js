@@ -125,7 +125,7 @@ class Calculate extends React.Component {
                       <div className={this.state.ActiveData.BankName==this.state.Data[i].BankName?" mx-auto p-0 p-0 borderimg text-center bg-white ActiveBorder":" mx-auto p-0 p-0 borderimg text-center bg-white"} >
                         <img src={this.props.AllBanks[this.state.Data[i].BankName].logo} alt="" className=" mx-auto text-center   bgwhite"style={{height:"75%",width:"100%",objectFit:"contain"}} />
                         {/* <img src={AddCreditCard} alt="" className=" mx-auto text-center  imagestyle bgwhite" /> */}
-                        <p className="fz12 fw600 m-0 fcm">{this.state.Data[i]&&JSON.parse(this.state.Data[i].BankCards).Name}</p>
+                        <p className="fz10 fw600 m-0 fcm">{this.state.Data[i]&&JSON.parse(this.state.Data[i].BankCards).Name}</p>
  
                       </div>
                     </div>
