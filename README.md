@@ -1,5 +1,7 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+# payoff
+Demo website for mobile serves to manage credit card debt   
+Features Overview: HTML CSS  Bootstrap React.js redux API  Responsive Layout Design FontawesomeIcon 
+# https://handy0.netlify.com
 ## Available Scripts
 
 In the project directory, you can run:
