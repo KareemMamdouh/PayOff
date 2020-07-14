@@ -1,5 +1,5 @@
 # payoff
-Demo website for mobile serves to manage credit card debt   
+Demo website ( mobile view only) to manage credit card debt   
 Features Overview: HTML CSS  Bootstrap React.js redux API  Responsive Layout Design FontawesomeIcon 
 # https://handy0.netlify.com
 ## Available Scripts
