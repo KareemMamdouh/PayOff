@@ -1,6 +1,6 @@
 # payoff
 Demo website ( mobile view only) to manage credit card debt   
-Features Overview: HTML CSS  Bootstrap React.js redux API  Responsive Layout Design FontawesomeIcon 
+Features Overview: HTML, CSS,  Bootstrap, React.js, redux, API
 # https://handy0.netlify.com
 ## Available Scripts
 
