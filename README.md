@@ -1,7 +1,7 @@
 # payoff
 Demo website ( mobile view only) to manage credit card debt   
 Features Overview: HTML, CSS,  Bootstrap, React.js, redux, API
-# https://handy0.netlify.com
+# https://payoff.netlify.app/
 ## Available Scripts
 
 In the project directory, you can run:
